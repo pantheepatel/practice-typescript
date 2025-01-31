@@ -1,0 +1,32 @@
+ts is nothing but js with types.
+primitive - boolean, number, string, bigint, symbol
+types : 
+    1. expicit - let name:string="Panthee"
+    2. implicit - let name="Panthee" (Having TypeScript "guess" the type of a value is called infer.)
+        TypeScript may not always properly infer what the type of a variable may be. In such cases, it will set the type to any which disables type checking.
+        behavior can be disabled by enabling noImplicitAny as an option in a TS's project tsconfig.json. That is a JSON config file for customizing how some of TS behaves.
+    -- any: any type, disables type checking, most unsafe, should not use
+        unknown: type of variable is unknown but want to accept all possible value of data, is not disabling type checking
+                    requires explicit type checking before use. ie. typeof varName=="string" then do this,...
+        never: represents values that never occur, 
+            Appropriate Use Cases: Error Handling, Infinite Loops
+arrays: TypeScript can infer the type of an array if it has values
+    1. const arr:string[]=[]
+    2. const arr:readonly string[]=[]
+tuples: A tuple is a typed array with a pre-defined length and types for each index.
+    1. let ourTuple: [number, boolean, string];  ourTuple = [5, false, 'Coding'];
+    2. let ourTuple:readonly [number, boolean, string];  ourTuple = [5, false, 'Coding'];
+        good practice to make tuple readonly as it is stricty typed for initial values
+    3. named tuple, const graph: [x: number, y: number] = [55.2, 41.3];
+    4. Destructuring Tuples, const graph: [number, number] = [55.2, 41.3];
+                             const [x, y] = graph;
+objects: TypeScript can infer the types of properties based on their values.
+    1. const car: { type: string, model: string, year: number } = {type: "Toyota",model: "Corolla",year: 2009};
+    2. Index Signatures, const nameAgeMap: { [index: string]: number } = {};
+enum: "class" that represents a group of constants (unchangeable variables).
+    can also initilize starting number/fully/ strings too.
+    -- Technically, you can mix and match string and numeric enum values, but it is recommended not to do so.
+
+
+doubt
+1. how to use symbol datatype
