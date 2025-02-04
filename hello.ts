@@ -32,9 +32,36 @@ const car: { type: string, model: string, year: number } = {
 const nameAgeMap: { [index: string]: number } = {};
 // enums
 enum CardinalDirections {
-    North=1,
-    East,
-    South,
-    West
+    North = "no",
+    East = "Ea",
+    South = "So",
+    West = "We"
 }
-console.log(CardinalDirections.North);
+// console.log(CardinalDirections.North);
+// console.log(eval("3/0")) 
+
+
+// can directly extend Animal interface with 'extends' keyword. also can add new fields by redefining that interface.
+interface Animal1 {
+    name: string;
+}
+interface Bear1 extends Animal1 {
+    honey: boolean;
+}
+const bear1: Bear1 = {
+    name: 'bew',
+    honey: true
+};
+console.log(bear1.honey, bear1.name)
+// have to use & symbol for extension, 
+type Animal2 = {
+    name: string;
+}
+type Bear2 = Animal2 & {
+    honey: boolean;
+}
+const bear2: Bear2 = {
+    name: 'bew',
+    honey: true
+};
+console.log(bear2.honey, bear2.name)

@@ -1,4 +1,7 @@
-ts is nothing but js with types.
+ts is nothing but js with types. just developement tool. wrapper for js.
+ A Static Type Checker
+
+tsc nameFile.ts - will convert ts file into js
 primitive - boolean, number, string, bigint, symbol
 types : 
     1. expicit - let name:string="Panthee"
@@ -13,6 +16,7 @@ types :
 arrays: TypeScript can infer the type of an array if it has values
     1. const arr:string[]=[]
     2. const arr:readonly string[]=[]
+    3. let mixedData: (string | boolean)[] = ["23.4", "42", true, "banana", false]; Any number of string or boolean values can be added. No strict ordering is enforced.
 tuples: A tuple is a typed array with a pre-defined length and types for each index.
     1. let ourTuple: [number, boolean, string];  ourTuple = [5, false, 'Coding'];
     2. let ourTuple:readonly [number, boolean, string];  ourTuple = [5, false, 'Coding'];
@@ -26,7 +30,56 @@ objects: TypeScript can infer the types of properties based on their values.
 enum: "class" that represents a group of constants (unchangeable variables).
     can also initilize starting number/fully/ strings too.
     -- Technically, you can mix and match string and numeric enum values, but it is recommended not to do so.
+functions: generics are used when we want to describe a correspondence between two values
+casting: as, <> - this won't work in tsx file(react)
+
+** Classes:
+visibility of member - public, private, protected
+class implements interface and class extends class.
+override - if you want to override something of parent class then you should write override keyword but not necessary.
+    if we are overriding somwthing then have to override each n everything like return type, arguments, visibility,...
+implements - if we are implementing some interface then have to add everything defined in interface into our class.     
+    methods in this must be public.
+abstract class - Classes can be written in a way that allows them to be used as a base class for other classes without having to implement all the members. 
+    This is done by using the abstract keyword. Members that are left unimplemented also use the abstract keyword.
+
+-- abstract is same as interface but main diff is in abstract class you can skip defining somethings, 
+    but interface's property&methods must be defined in class that implemets it.
+-- Abstract classes cannot be directly instantiated, as they do not have all their members implemented. same for interface.
+** generics - functions, classes, interface, types
+** Utility - partial, required, record, omit, pick, exclude, returnType, parameters, readonly
+** Extra:
 
 
 doubt
 1. how to use symbol datatype
+2. why do you need to do force casting of variable
+3. diff bet type, class, interface
+4. why ts is not allowing to add property to defined object like js
+
+
+Topics**
+What is Typescript? --
+Typescript Basics --
+Interfaces & Type Aliases --
+Querying the Document
+Classes 
+Converting to TS
+Generics --
+Top & Bottom Types
+Advanced Types --
+Declaration Merging
+Compiler API
+
+3-2-25
+Union Types
+Functions
+Classes -
+Generics
+Types and Interfaces generic class aliases
+Casting -
+4-2-25
+Utility Types
+Keyof and Null
+Top and Bottom Types
+Declaration Merging
